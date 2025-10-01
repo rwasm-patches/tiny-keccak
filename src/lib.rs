@@ -152,6 +152,9 @@ cfg_if::cfg_if! {
     if #[cfg(all(target_os = "zkvm", target_vendor = "succinct", target_arch = "riscv32"))] {
         mod succinct;
         pub use succinct::keccakf;
+    } else if #[cfg(all(target_arch = "wasm32"))] {
+        mod rwasm;
+        pub use rwasm::keccakf;
     } else {
         pub use keccakf::keccakf;
     }

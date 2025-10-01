@@ -33,6 +33,9 @@ cfg_if::cfg_if! {
     if #[cfg(all(target_os = "zkvm", target_vendor = "succinct", target_arch = "riscv32"))] {
         use crate::succinct;
         use succinct::keccakf;
+    } else if #[cfg(all(target_arch = "wasm32"))] {
+        use crate::rwasm;
+        use rwasm::keccakf;
     } else {
         keccak_function!("`keccak-f[1600, 24]`", keccakf, ROUNDS, RC);
     }
