@@ -14,7 +14,6 @@ categories = ["cryptography", "no-std"]
 [dependencies]
 crunchy = "0.2.2"
 cfg-if = "1.0"
-fluentbase-sdk = { git = "https://github.com/fluentlabs-xyz/fluentbase.git", branch = "devel", default-features = false }
 
 [profile.dev]
 opt-level = 3  # Controls the --opt-level the compiler builds with
